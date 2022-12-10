@@ -4,7 +4,21 @@ import { PracticeCard } from "../../components";
 import { Link } from "react-router-dom";
 import styles from "./Aporte.module.css";
 import PerfilU from "../MisAportes/foto/PerfilUsuario.jpg";
-export const Aporte = () => {
+import { useEffect } from "react";
+import { useState } from "react";
+import { get } from "../../helpers";
+  export const Aporte = () => {
+    const {id} = useParams();
+    const [aporte, setAportes] = useState({})
+    console.log(id)
+    const getAportes = async() =>{
+      const data = await get("http://142.93.203.113:3001/api/contributions/"+id)
+      setAportes(data)
+      console.log(data)
+    }
+    useEffect(()=>{
+      getAportes()
+    },[])
     return (
       <div className={styles.Titulo}>
         <h1>Aporte Reciente</h1>
