@@ -33,7 +33,7 @@ export const AuthenticatedRoutes = () => {
             <Route path="/contribuir/MisAportes" element={existLogedUser()?<MisAportes/>:<Navigate to="/"/>}/>
             <Route path="/contribuir/AportesRecientes" element={existLogedUser()?<AportesRecientes/>:<Navigate to="/"/>}/>
             <Route path="/contribuir/SubirAporte" element={existLogedUser()?<SubirAporte/>:<Navigate to="/"/>}/>
-            <Route path="/contribuir/MisAportes/:id" element={existLogedUser()?<Aporte/>:<Navigate to="/"/>}/>
+            <Route path="/contribuir/aporte/:id" element={existLogedUser()?<Aporte/>:<Navigate to="/"/>}/>
           </Routes>
         </div>
       </div>
