@@ -6,40 +6,44 @@
     margin-left: 10vh;
     margin-right: 10vh;
     margin-bottom: 3vh;
-    margin-top:3vh;
+    margin-top: 3vh;
 
 }
-.foto{
+
+.foto {
     width: 15%;
     height: 15%;
     margin-left: 3vh;
     margin-right: 3vh;
     margin-bottom: 3vh;
-    margin-top:3vh;
+    margin-top: 3vh;
     border-radius: 50%;
 }
-.Titulo{
+
+.Titulo {
     text-align: left;
     color: black;
     border: solid black;
     border-radius: 10px;
-    
+
 }
-.Titulo h1{
-    margin-top:1vh;
+
+.Titulo h1 {
+    margin-top: 1vh;
     margin-left: 1vh;
 }
 
 .Titulo p {
-    
-    display: flex;
-    text-align: start;
+
+    /* display: flex;
+    text-align: start; */
     color: rgb(0, 0, 0);
     font-size: 1.6vw;
-    margin-left: 3vh;
-    margin-right: 3vh;
-    margin-bottom: 3vh;
-    margin-top:3vh;
+    margin-left: 1vh;
+    margin-right: 1vh;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+    justify-content: flex-start;
 }
 
 .textform {
@@ -57,19 +61,19 @@
     /* border-radius: 7px; */
     background-color: #e2e2e2;
     width: 20%;
-    height: 40px; 
+    height: 40px;
     color: #e2e2e2;
     border: 0px;
     border-color: #e2e2e2;
     margin-left: 1vh;
     margin-right: 1vh;
     margin-bottom: 1vh;
-    margin-top:1vh;
+    margin-top: 1vh;
     /* display:none; */
 }
 
 .button:hover {
-    
+
     border-radius: 7px;
     background-color: rgb(236, 37, 37);
     width: 20%;

@@ -43,7 +43,7 @@ export const SubirAporte = () => {
             type="text"
             id="titulocap"
             name="titulo"
-            placeholder="Ingrese nombre del capitulo"
+            placeholder="Ingrese titulo"
             onChange={onFormUpdate}
             className={styles.box}
           />
@@ -59,20 +59,24 @@ export const SubirAporte = () => {
             name="descripcion"
             onChange={onFormUpdate}
             className={styles.box}
-          /><label htmlFor="className" className="">
+          />
+          <br />
+          <br />
+          <label htmlFor="className" className={styles.textform}>
             Ingrese el ClassName: 
           </label>
           <input
           type="text"
           onChange={onFormUpdate}
-          name ="className"></input>
-          <label htmlFor="className" className="">
+          name ="className"
+          className={styles.box}></input>
+           {/* <label htmlFor="className" className="">
             Ingrese el ClassName: 
           </label>
           <input
           type="text"
           onChange={onFormUpdate}
-          name ="className"></input>
+          name ="className"></input> */}
           <br />
           <br />
           <label htmlFor="CodigoEjem" className={styles.textform}>
@@ -89,7 +93,7 @@ export const SubirAporte = () => {
                 editorProps={{ $blockScrolling: false }}
                 onChange={onCodeChange}
                 />
-          <AceEditor mode={"Java"}
+          {/* <AceEditor mode={"Java"}
                 
                 value={codigo}
                 fontSize={14}
@@ -99,7 +103,7 @@ export const SubirAporte = () => {
                   }}
                 editorProps={{ $blockScrolling: false }}
                 onChange={onCodeChange}
-                />
+                /> */}
         </form>
         <br />
         <br />
