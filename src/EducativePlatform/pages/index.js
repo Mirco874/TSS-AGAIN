@@ -8,3 +8,4 @@ export * from "./CreateContentPage/CreateContentPage";
 export * from "./MaterialPage/MaterialPage";
 export * from "./PracticePage/PracticePage";
 export * from "./CodeEditorPage/CodeEditorPage";
+export * from "./PaginaPrincipal/PaginaPrincipal"

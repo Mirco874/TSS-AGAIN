@@ -1,112 +1,99 @@
 import { Link } from 'react-router-dom';
 
-import RevisarAporte from '../PaginaPrincipal/fotos/RevisarAporte.jpg';
-import SubirAporte from '../PaginaPrincipal/fotos/SubirAporte.jpg';
+import contenido from '../PaginaPrincipal/fotos/contenido.png';
+import oferta1 from '../PaginaPrincipal/fotos/oferta1.webp';
+import plataformaEducativa
+  from '../PaginaPrincipal/fotos/plataformaEducativa.jpg';
+import quienesSomos from '../PaginaPrincipal/fotos/quienesSomos.webp';
 import styles from './PaginaPrincipal.module.css';
 
 export const PaginaPrincipal = () => {
   return (
     <div>
+      <div class="col-12 col-md-8">
+      <div class="row" className={styles.Inicio}>
       <h1>Plataforma Educativa de Simulacion de Sistemas</h1>
-      <div className={styles.Inicio}>
+
         <div className={styles.Cuadro}>
-          <img src={RevisarAporte} alt="" className={styles.fotoCuadro} />
+          <img src={plataformaEducativa} alt="" className={styles.fotoCuadro} />
           <p>Amplia tus conocimientos en Simulacion de Sistemas</p>
-          <Link to={`/clases/contribuir/Registro`}>
+          <Link to={`/registro`}>
             <p>Registrate</p>
           </Link>
         </div>
 
-        <h2>Nuestro contenido base</h2>
-      <div className={styles.Inicio}>
-        <div className={styles.Cuadro}>
-          <img src={RevisarAporte} alt="" className={styles.fotoCuadro} />
-          <p>Tema 1</p>
-          <p>Tema 2</p>
-          <p>Tema 3</p>
-          <p>Tema 4</p>
-          <p>Tema 5</p>
+       <div></div>
+       <div class="col-12 col-md-4" className={styles.Left}><section class="">
+       <h2>Nuestro contenido base</h2>
+       <img src={contenido} alt="" className={styles.fotoCuadro} />
 
-          <Link to={`/clases/contribuir/Registro`}>
-            <p>Registrate</p>
-          </Link>
-        </div>
+          <p>Introduccion a la Simulacion de Sistemas</p>
+          <p>Gereración de Números Rectangulares</p>
+          <p>Pruebas Estadísticas para Números Pseudoaleatorios</p>
+          <p>Generación de Variables Aleatorias No-Uniformes.</p>
+          <p>Aplicaciones de Simulación</p>
+          </section>  </div>
+          <div class="col-12 col-md-4" className={styles.Right}>
 
         <h2>Quienes somos?</h2>
-      <div className={styles.Inicio}>
-        <div className={styles.Cuadro}>
-          <img src={RevisarAporte} alt="" className={styles.fotoCuadro} />
-          <p>parrafo</p>
-          <Link to={`/clases/contribuir/Registro`}>
-            <p>Registrate</p>
-          </Link>
-        </div>
-
+        <div >
+          <img src={quienesSomos} alt="" className={styles.fotoCuadro} />
+          <div bgcolor="#FF0000">
+          <p>Somos un grupo con el objetivo de </p>
+          <p> hacer que el material de Simulacion de Sistemas</p>
+          <p>sea accesible para todo publico, sin importar </p>
+          <p> la edad, desarrollando oportunidades para que tanto </p>
+          <p> docente y estudiante tengan una plataforma gratuita donde puedan</p>
+          <p>intercambiar conocimiento, de forma didactica y simple.</p>
+          </div>
+        </div></div>
         <h2>Que ofrecemos?</h2>
-      <div className={styles.Inicio}>
-        <div className={styles.Cuadro}>
-          <img src={RevisarAporte} alt="" className={styles.fotoCuadro} />
-          <p>parrafo</p>
-          <Link to={`/clases/contribuir/Registro`}>
-            <p>Registrate</p>
-          </Link>
-        </div>
+        
+        <div className={styles.Titulo}>
+                <div >
+              </div>
+              <img src={oferta1} alt="" className={styles.fotoCuadro2} />        
 
-        <div className={styles.Cuadro}>
-          <img src={SubirAporte} alt="" className={styles.fotoCuadro2} />
-          <Link to={`/clases/contribuir/SubirAporte`}>
-            <p>Subir aporte</p>
-          </Link>
-        </div>
-      </div>
+              <div className={styles.Class}>
 
-      <Link to={`/clases/contribuir/AportesRecientes`}>
-        <h2>Beneficios</h2>
-      </Link>
-      <div className={styles.Titulo}>
-        <div className={styles.Class}>
-          <h2>Material disponible 24/7</h2>
-          <p>
-            Tendras el material accesible todo el dia, todos los dias.
-          </p>
-        </div>
-        <div className={styles.Class}>
-          <h2>Aprende en comunidad</h2>
-          <p>
-           Conecta con otros estudiantes, comparte tus proyectos y tus dudas.
-          </p>
-        </div>
+                <h2>Material disponible 24/7</h2>
+                <p>
+                  Tendras el material accesible todo el dia, todos los dias.
+                </p>
+              </div>
+              <div className={styles.Class}>
+                <h2>Aprende en comunidad</h2>
+                <p>
+                Conecta con otros estudiantes, comparte tus proyectos y tus dudas.
+                </p>
+              </div>
+              </div> 
 
-        <div className={styles.Class}>
-          <h2>Foros y respuestas a tus preguntas</h2>
-          <p>
-           Participa en foros para mejorar tu conocimiento.
-          </p>
-        </div>
+              <div className={styles.Titulo}>
+                <div >
+              </div>
+              <img src={oferta1} alt="" className={styles.fotoCuadro2} />        
 
-        <div className={styles.Class}>
-          <h2>Tareas didacticas</h2>
-          <p>
-           Participa en foros para mejorar tu conocimiento.
-          </p>
-        </div>
-      </div>
+              <div className={styles.Class}>
 
-      <div className={styles.Inicio}>
-        <div className={styles.Cuadro}>
-          <img src={RevisarAporte} alt="" className={styles.fotoCuadro} />
-          <p>Contactanos</p>
-          <Link to={`/clases/contribuir/Registro`}>
-            <p>Registrate</p>
-          </Link>
-
-          </div>
-          </div>
-
+                <h2>Material disponible 24/7</h2>
+                <p>
+                  Tendras el material accesible todo el dia, todos los dias.
+                </p>
+              </div>
+              <div className={styles.Class}>
+                <h2>Aprende en comunidad</h2>
+                <p>
+                Conecta con otros estudiantes, comparte tus proyectos y tus dudas.
+                </p>
+              </div>
+              </div> 
+              </div>    
+    </div>
+      
     </div>    
-    </div>
-    </div>
-    </div>
+   
+    
 
   );
 };
