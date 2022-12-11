@@ -6,7 +6,8 @@
     margin-left: 10vh;
     margin-right: 10vh;
     margin-bottom: 5vh;
-    margin-top: 10vh;
+    margin-top: 3vh;
+    justify-content: space-between;
 
 }
 
@@ -72,8 +73,9 @@
     height: 65%;
 }
 
-.cod p {
-    align-self: flex-end;
+.cod {
+    justify-content: center;
+    margin-left: 40vh;
 }
 
 .button {
@@ -85,4 +87,19 @@
     color: black;
     border-radius: 7px;
     /* margin-left: 10vh; */
+}
+
+.Titulo h2 {
+    justify-content: end;
+    flex-wrap: wrap;
+    width: 20%;
+    height: 35px;
+    color: rgb(255, 255, 255);
+    border-radius: 7px;
+    margin-top: 1vh;
+    /* margin-left: 10vh; */
+}
+
+.margenBoton {
+    justify-content: end;
 }
