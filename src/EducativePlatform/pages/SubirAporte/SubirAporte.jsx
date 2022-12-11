@@ -6,6 +6,7 @@ import { useFetch, useForm } from "../../../hooks";
 import { PracticeCard } from "../../components";
 import { Link } from "react-router-dom";
 import { CodeEditor } from "../../../UI/components/CodeEditor/CodeEditor";
+import { post } from "../../helpers";
 export const SubirAporte = () => {
   const [titulocap, setTitulocap] = useState("");
 
@@ -21,8 +22,11 @@ export const SubirAporte = () => {
   const onCodeChange=(newValue)=>{
     console.log(newValue)
     setCodigo(newValue)}
+  
   const subirContrib = () =>{
-    post ("http://142.93.203.113:3001/api/contributions", {...form,codigo: codigo})
+    const id_usuario = localStorage.getItem("id_usuario")
+    console.log(id_usuario)
+    post ("http://142.93.203.113:3001/api/contributions", {...form,codigo: codigo,id_usuario: id_usuario})
   }
   return (
     <div className={styles.Titulo}>
@@ -39,7 +43,7 @@ export const SubirAporte = () => {
             type="text"
             id="titulocap"
             name="titulo"
-            placeholder="Ingrese nombre del capitulo"
+            placeholder="Ingrese titulo"
             onChange={onFormUpdate}
             className={styles.box}
           />
@@ -55,13 +59,24 @@ export const SubirAporte = () => {
             name="descripcion"
             onChange={onFormUpdate}
             className={styles.box}
-          /><label htmlFor="className" className="">
+          />
+          <br />
+          <br />
+          <label htmlFor="className" className={styles.textform}>
             Ingrese el ClassName: 
           </label>
           <input
           type="text"
           onChange={onFormUpdate}
-          name ="className"></input>
+          name ="className"
+          className={styles.box}></input>
+           {/* <label htmlFor="className" className="">
+            Ingrese el ClassName: 
+          </label>
+          <input
+          type="text"
+          onChange={onFormUpdate}
+          name ="className"></input> */}
           <br />
           <br />
           <label htmlFor="CodigoEjem" className={styles.textform}>
@@ -78,10 +93,21 @@ export const SubirAporte = () => {
                 editorProps={{ $blockScrolling: false }}
                 onChange={onCodeChange}
                 />
+          {/* <AceEditor mode={"Java"}
+                
+                value={codigo}
+                fontSize={14}
+                setOptions={{
+                  enableLiveAutocompletion: true,
+                  showLineNumbers: true,
+                  }}
+                editorProps={{ $blockScrolling: false }}
+                onChange={onCodeChange}
+                /> */}
         </form>
         <br />
         <br />
-        <button id="botonNuevoCap" type="button" className={styles.button}>
+        <button id="botonNuevoCap" type="button" className={styles.button} onClick ={subirContrib}>
           Subir{" "}
         </button>
         <br />
