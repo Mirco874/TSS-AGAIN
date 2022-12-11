@@ -25,28 +25,26 @@ export const ContribuirPage = () => {
   }, []);
   return (
     <div>
-      <h1>Mis aportes</h1>
+      <h1 className={styles.tituloh1}>Mis aportes</h1>
       <div className={styles.Inicio}>
         <div className={styles.Cuadro}>
-          <img src={RevisarAporte} alt="" className={styles.fotoCuadro} />
           <Link to={`/clases/contribuir/MisAportes`}>
-            <p>Revisar mis aportes</p>
+            <img src={RevisarAporte} alt="" className={styles.fotoCuadro} />
+            <p className={styles.Cuadradop}>Revisar mis aportes</p>
           </Link>
         </div>
 
         <div className={styles.Cuadro}>
-          <img src={SubirAporte} alt="" className={styles.fotoCuadro2} />
           <Link to={`/clases/contribuir/SubirAporte`}>
-            <p>Subir aporte</p>
+            <img src={SubirAporte} alt="" className={styles.fotoCuadro2} />
+            <p className={styles.Cuadradop}>Subir aporte</p>
           </Link>
         </div>
       </div>
 
-      <Link to={`/clases/contribuir/AportesRecientes`}>
-        <div>
-          <h1>Aportes recientes: </h1>
-        </div>
-      </Link>
+      <div>
+        <h1 className={styles.tituloh1}>Aportes recientes: </h1>
+      </div>
 
       <div className={styles.Titulo}>
         {/* <Link to={`/clases/contribuir/Aporte`}> */}

@@ -53,9 +53,11 @@
 }
 
 .button {
-    border-radius: 7px;
-    background-color: rgb(62, 253, 253);
+    border-radius: 20px;
+    /* background-color: rgb(25, 86, 199); */
     width: 20%;
     height: 40px;
     color: black;
+    justify-content: center;
+    display: flex;
 }

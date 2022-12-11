@@ -12,22 +12,29 @@ export const SubirAporte = () => {
 
   const [DescripEjem, setDescripEjem] = useState("");
   const [CodigoEjem, setCodigoEjem] = useState("");
-  const formularioSubir = {id_usuario:"",
-  titulo:"",
-  descripcion:"",
-  className:"",
-  codigo:""}
-  const {form,onFormUpdate} = useForm(formularioSubir)
-  const [codigo, setCodigo] = useState()
-  const onCodeChange=(newValue)=>{
-    console.log(newValue)
-    setCodigo(newValue)}
-  
-  const subirContrib = () =>{
-    const id_usuario = localStorage.getItem("id_usuario")
-    console.log(id_usuario)
-    post ("http://142.93.203.113:3001/api/contributions", {...form,codigo: codigo,id_usuario: id_usuario})
-  }
+  const formularioSubir = {
+    id_usuario: "",
+    titulo: "",
+    descripcion: "",
+    className: "",
+    codigo: "",
+  };
+  const { form, onFormUpdate } = useForm(formularioSubir);
+  const [codigo, setCodigo] = useState();
+  const onCodeChange = (newValue) => {
+    console.log(newValue);
+    setCodigo(newValue);
+  };
+
+  const subirContrib = () => {
+    const id_usuario = localStorage.getItem("id_usuario");
+    console.log(id_usuario);
+    post("http://142.93.203.113:3001/api/contributions", {
+      ...form,
+      codigo: codigo,
+      id_usuario: id_usuario,
+    });
+  };
   return (
     <div className={styles.Titulo}>
       <p>Crear un nuevo aporte</p>
@@ -63,53 +70,45 @@ export const SubirAporte = () => {
           <br />
           <br />
           <label htmlFor="className" className={styles.textform}>
-            Ingrese el ClassName: 
+            Ingrese el ClassName:
           </label>
           <input
-          type="text"
-          onChange={onFormUpdate}
-          name ="className"
-          className={styles.box}></input>
-           {/* <label htmlFor="className" className="">
-            Ingrese el ClassName: 
-          </label>
-          <input
-          type="text"
-          onChange={onFormUpdate}
-          name ="className"></input> */}
+            type="text"
+            onChange={onFormUpdate}
+            name="className"
+            className={styles.box}
+          ></input>
+
           <br />
           <br />
           <label htmlFor="CodigoEjem" className={styles.textform}>
             Codigo del ejemplo:{" "}
           </label>
-          <AceEditor mode={"Java"}
-                
-                value={codigo}
-                fontSize={14}
-                setOptions={{
-                  enableLiveAutocompletion: true,
-                  showLineNumbers: true,
-                  }}
-                editorProps={{ $blockScrolling: false }}
-                onChange={onCodeChange}
-                />
-          {/* <AceEditor mode={"Java"}
-                
-                value={codigo}
-                fontSize={14}
-                setOptions={{
-                  enableLiveAutocompletion: true,
-                  showLineNumbers: true,
-                  }}
-                editorProps={{ $blockScrolling: false }}
-                onChange={onCodeChange}
-                /> */}
+          <AceEditor
+            mode={"Java"}
+            value={codigo}
+            fontSize={14}
+            setOptions={{
+              enableLiveAutocompletion: true,
+              showLineNumbers: true,
+            }}
+            editorProps={{ $blockScrolling: false }}
+            onChange={onCodeChange}
+          />
         </form>
         <br />
         <br />
-        <button id="botonNuevoCap" type="button" className={styles.button} onClick ={subirContrib}>
-          Subir{" "}
-        </button>
+        <div className={styles.button}>
+          <button
+            id="botonNuevoCap"
+            type="button"
+            className="btn btn-primary"
+            onClick={subirContrib}
+          >
+            Subir{" "}
+          </button>
+        </div>
+
         <br />
         <br />
       </div>

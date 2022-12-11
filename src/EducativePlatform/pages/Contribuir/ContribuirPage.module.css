@@ -2,7 +2,7 @@
     display: flex;
     background-color: #e2e2e2;
     border-radius: 20px;
-    border: solid rgb(66, 65, 65);
+    border: solid rgb(0, 0, 0);
     margin-left: 10vh;
     margin-right: 10vh;
     margin-bottom: 3vh;
@@ -64,4 +64,11 @@
 .fotoCuadro2{
     width: 90%;
     height: 65%;
+}
+.tituloh1 {
+    color: black;
+}
+.Cuadradop{
+    color: black;
+    font-size: 1.6vw;
 }
