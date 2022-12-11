@@ -5,7 +5,9 @@ import { existLogedUser } from "../../helpers";
 import { ClassContent, ClassPage, CodeEditorPage, CreateContentPage, JoinClassPage, MaterialPage, PracticePage, RegisterClassPage } from "../../pages";
 import { Aporte } from "../../pages/Aportes/Aporte";
 import { AportesRecientes } from "../../pages/AportesRecientes/AportesRecientes";
+import { ChatPage } from "../../pages/ChatPage/ChatPage";
 import { ContribuirPage } from "../../pages/Contribuir/ContribuirPage";
+import { Mensajes } from "../../pages/Mensajes/Mensajes";
 import { MisAportes } from "../../pages/MisAportes/MisAportes";
 import { SubirAporte } from "../../pages/SubirAporte/SubirAporte";
 
@@ -34,6 +36,8 @@ export const AuthenticatedRoutes = () => {
             <Route path="/contribuir/AportesRecientes" element={existLogedUser()?<AportesRecientes/>:<Navigate to="/"/>}/>
             <Route path="/contribuir/SubirAporte" element={existLogedUser()?<SubirAporte/>:<Navigate to="/"/>}/>
             <Route path="/contribuir/aporte/:id" element={existLogedUser()?<Aporte/>:<Navigate to="/"/>}/>
+            <Route path="/mensajes" element={existLogedUser()?<ChatPage/>:<Navigate to="/"/>}/>
+            <Route path="/mensajes/mensaje/:id_destino" element={existLogedUser()?<Mensajes/>:<Navigate to="/"/>}/>
           </Routes>
         </div>
       </div>
