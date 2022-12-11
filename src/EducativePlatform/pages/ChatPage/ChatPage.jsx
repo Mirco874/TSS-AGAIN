@@ -10,8 +10,8 @@ import { del, get, post } from "../../helpers";
 export const ChatPage = () => {
   const [usuarios, setUsers] = useState([]);
   const navigate = useNavigate();
+  const id_usuario = localStorage.getItem("id_usuario");
   const getUseres = async () => {
-    const id_usuario = localStorage.getItem("id_usuario");
     console.log(id_usuario);
     const data = await get("http://142.93.203.113:3001/api/users");
     setUsers(data);
@@ -25,26 +25,31 @@ export const ChatPage = () => {
     <div className={styles.Titulo}>
       <h1>Compañeros</h1>
       <div className={styles.orden}>
-        {usuarios.map((usuario) => (
-          <div className={styles.Class}>
-            {/* <h3>{aporte.titulo}</h3> */}
-            <img src={PerfilU} alt="" className={styles.foto} />
-            <p>
-              <h3>{usuario.nombre_completo}</h3>({usuario.rol})
-              <div>
-                <button
-                  type="button"
-                  className="btn btn-primary"
-                  onClick={() => {
-                    navigate("mensaje/" + usuario.id);
-                  }}
-                >
-                  Enviar mensaje{" "}
-                </button>
-              </div>
-            </p>
-          </div>
-        ))}
+        {usuarios.map(
+          (usuario) =>
+            usuario.id != id_usuario && (
+              <>
+                <div className={styles.Class}>
+                  {/* <h3>{aporte.titulo}</h3> */}
+                  <img src={PerfilU} alt="" className={styles.foto} />
+                  <p>
+                    <h3>{usuario.nombre_completo}</h3>({usuario.rol})
+                    <div>
+                      <button
+                        type="button"
+                        className="btn btn-primary"
+                        onClick={() => {
+                          navigate("mensaje/" + usuario.id);
+                        }}
+                      >
+                        Enviar mensaje{" "}
+                      </button>
+                    </div>
+                  </p>
+                </div>
+              </>
+            )
+        )}
       </div>
     </div>
   );

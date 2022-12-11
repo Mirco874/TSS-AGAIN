@@ -23,7 +23,9 @@
     color: black;
     border: solid black;
     border-radius: 10px;
-    
+    overflow-y: scroll;
+    height: 55vh;
+
 }
 .Titulo h1{
     margin-top:1vh;

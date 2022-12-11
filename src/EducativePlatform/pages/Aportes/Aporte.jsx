@@ -9,6 +9,7 @@ import { useState } from "react";
 import { del, get, post } from "../../helpers";
 import AceEditor from "react-ace";
 export const Aporte = () => {
+  const id_usuario = localStorage.getItem("id_usuario");
   const [aportes, setAportes] = useState([]);
   const { id } = useParams();
   const navigate = useNavigate();
@@ -28,7 +29,7 @@ export const Aporte = () => {
 
   const subirComentario = async (e) => {
     e.preventDefault();
-    const id_usuario = localStorage.getItem("id_usuario");
+
     console.log(id_usuario);
     await post(`http://142.93.203.113:3001/api/contribution/${id}/message`, {
       ...form,
@@ -128,15 +129,17 @@ export const Aporte = () => {
             </p>
             <h2>
               <div className={styles.margenBoton}>
-                <button
-                  type="button"
-                  className="btn btn-danger mb-3"
-                  onClick={() => {
-                    eliminarComentario(comentario.id);
-                  }}
-                >
-                  Eliminar{" "}
-                </button>
+                {id_usuario == comentario.id_autor && (
+                  <button
+                    type="button"
+                    className="btn btn-danger mb-3"
+                    onClick={() => {
+                      eliminarComentario(comentario.id);
+                    }}
+                  >
+                    Eliminar{" "}
+                  </button>
+                )}
               </div>
             </h2>
           </div>

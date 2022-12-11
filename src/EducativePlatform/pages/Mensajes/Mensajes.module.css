@@ -103,3 +103,9 @@
 .margenBoton {
     justify-content: end;
 }
+.mensajeEnviado{
+    text-align: right;
+}
+.mensajeRecibido{
+    text-align: left;
+}

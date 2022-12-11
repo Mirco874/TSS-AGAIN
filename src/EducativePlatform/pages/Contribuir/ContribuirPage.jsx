@@ -14,9 +14,7 @@ export const ContribuirPage = () => {
   const getAportes = async () => {
     const id_usuario = localStorage.getItem("id_usuario");
     console.log(id_usuario);
-    const data = await get(
-      "http://142.93.203.113:3001/api/contributions/?user=" + id_usuario
-    );
+    const data = await get("http://142.93.203.113:3001/api/contributions");
     setAportes(data);
     console.log(aportes);
   };
