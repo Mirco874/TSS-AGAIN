@@ -1,15 +1,40 @@
-import { Navigate, Route, Routes } from "react-router-dom";
-import { NavBar, SideBar } from "../../components";
-import { existLogedUser } from "../../helpers";
+import {
+  Navigate,
+  Route,
+  Routes,
+} from 'react-router-dom';
 
-import { ClassContent, ClassPage, CodeEditorPage, CreateContentPage, JoinClassPage, MaterialPage, PracticePage, RegisterClassPage } from "../../pages";
-import { Aporte } from "../../pages/Aportes/Aporte";
-import { AportesRecientes } from "../../pages/AportesRecientes/AportesRecientes";
-import { ChatPage } from "../../pages/ChatPage/ChatPage";
-import { ContribuirPage } from "../../pages/Contribuir/ContribuirPage";
-import { Mensajes } from "../../pages/Mensajes/Mensajes";
-import { MisAportes } from "../../pages/MisAportes/MisAportes";
-import { SubirAporte } from "../../pages/SubirAporte/SubirAporte";
+import {
+  NavBar,
+  SideBar,
+} from '../../components';
+import { CheckTasksPage } from '../../components/CheckTasksPage/CheckTasksPage';
+import { existLogedUser } from '../../helpers';
+import {
+  ClassContent,
+  ClassPage,
+  CodeEditorPage,
+  CreateContentPage,
+  JoinClassPage,
+  MaterialPage,
+  PracticePage,
+  RegisterClassPage,
+} from '../../pages';
+import {
+  AportesRecientes,
+} from '../../pages/AportesRecientes/AportesRecientes';
+import { ChatPage } from '../../pages/ChatPage/ChatPage';
+import { ContribuirPage } from '../../pages/Contribuir/ContribuirPage';
+import { CreateTaskPage } from '../../pages/CreateTaskPage/CreateTaskPage';
+import { Mensajes } from '../../pages/Mensajes/Mensajes';
+import { MisAportes } from '../../pages/MisAportes/MisAportes';
+import { MyResponsesPage } from '../../pages/MyResponsesPage/MyResponsesPage';
+import { SubirAporte } from '../../pages/SubirAporte/SubirAporte';
+import { TaskResponses } from '../../pages/TaskResponses/TaskResponses';
+import { TasksPage } from '../../pages/TasksPage/TasksPage';
+import {
+  UpdateContentPage,
+} from '../../pages/UpdateContentPage/UpdateContentPage';
 
 export const AuthenticatedRoutes = () => {
 
@@ -23,7 +48,8 @@ export const AuthenticatedRoutes = () => {
         </div>
         <div className="main-content col-10">
           <Routes>
-          <Route path="" element={<ClassPage/>} />
+
+            <Route path="" element={<ClassPage/>} />
             <Route path="/crear-clase" element={existLogedUser()?<RegisterClassPage/>:<Navigate to="/"/>}/>
             <Route path="/unirse-clase" element={existLogedUser()? <JoinClassPage/> :<Navigate to="/"/>}/>
             <Route path="/:id" element={ existLogedUser()?<ClassContent/>:<Navigate to="/"/>}/>
@@ -38,6 +64,13 @@ export const AuthenticatedRoutes = () => {
             <Route path="/contribuir/aporte/:id" element={existLogedUser()?<Aporte/>:<Navigate to="/"/>}/>
             <Route path="/mensajes" element={existLogedUser()?<ChatPage/>:<Navigate to="/"/>}/>
             <Route path="/mensajes/mensaje/:id_destino" element={existLogedUser()?<Mensajes/>:<Navigate to="/"/>}/>
+           
+            <Route  path="/:id/capitulo/:id_capitulo/crear-tarea" element={existLogedUser()?<CreateTaskPage/>:<Navigate to="/"/>}/>
+            <Route path="/:id/capitulo/:id_capitulo/tareas" element={existLogedUser()?<TasksPage/>:<Navigate to="/"/>}/>
+            <Route  path="/:id/capitulo/:id_capitulo/tareas/:id_tarea/entregar-tarea" element={existLogedUser()?<TaskResponses/>:<Navigate to="/"/>}/>
+            <Route  path="/:id/capitulo/:id_capitulo/tareas/:id_tarea/revisar-entregas" element={existLogedUser()?<CheckTasksPage/>:<Navigate to="/"/>}/>
+            <Route  path="/mis-entregas" element={existLogedUser()?<MyResponsesPage/>:<Navigate to="/"/>}/>
+            <Route path="/:id/editar-capitulo/:id_capitulo" element={existLogedUser()?<UpdateContentPage/>:<Navigate to="/"/>}/>
           </Routes>
         </div>
       </div>

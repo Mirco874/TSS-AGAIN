@@ -1,7 +1,8 @@
-import { useState } from "react"
+import { useState } from 'react';
 
 export const useForm = (structure={}) => {
     const [form,setForm]=useState(structure);
+
 
     const onFormUpdate=({target})=>{
         const {name,value}=target;
@@ -12,5 +13,6 @@ export const useForm = (structure={}) => {
         );       
     }
 
-  return{form,onFormUpdate}
+
+  return{form,onFormUpdate,setForm}
 }

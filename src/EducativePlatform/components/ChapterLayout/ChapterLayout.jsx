@@ -1,7 +1,8 @@
-import PropTypes from "prop-types";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
-export const ChapterLayout = ({ capitulo }) => {
+import { del } from '../../helpers';
+
+export const ChapterLayout = ({ capitulo,idCapitulo,onReloadChapters }) => {
   const navigate=useNavigate();
   const {id_capitulo,titulo_capitulo,titulo_material,descripcion_material,titulo_foro,estado_foro,descripcion_foro} = capitulo;
   
@@ -10,7 +11,20 @@ export const ChapterLayout = ({ capitulo }) => {
   const ForumTitleTrim = titulo_foro.trim();
   const ChapterTitleTrim = titulo_capitulo.trim();
 
-    //const {content}=useFetch(`http://142.93.203.113:3001/api/chapters/${id_capitulo}/material`,"GET");
+const eliminarCapitulo=async(e)=>{
+  e.preventDefault();
+  await del("http://142.93.203.113:3001/api/chapters/"+idCapitulo)  
+  
+ await onReloadChapters();  
+}
+
+const editarCapitulo=(e)=>{
+  e.preventDefault(); 
+  navigate(`editar-capitulo/${idCapitulo}`)
+}
+
+  
+
   return (
     <div
       className="accordion accordion-flush mb-5"
@@ -18,16 +32,18 @@ export const ChapterLayout = ({ capitulo }) => {
     >
       <div className="d-flex flex-row justify-content-between">
         <h4>{titulo_capitulo}</h4>
+        <div className="d-flex me-0 h-50">
+        <button className="btn btn-outline-primary me-1" onClick={()=>navigate(`capitulo/${id_capitulo}/tareas`)}>Revisar tareas</button>
         {user_rol === "3" ? (
-          <div className="d-flex me-0 h-50">
-            <button className="btn btn-primary me-1">Editar</button>{" "}
-            <button className="btn btn-danger">Eliminar</button>{" "}
-          </div>
+          <>
+            <button className="btn btn-primary me-1" onClick={editarCapitulo}>Editar</button>
+            <button className="btn btn-black me-1" onClick={()=>navigate(`capitulo/${id_capitulo}/crear-tarea`)}>Agregar tarea </button>
+            <button className="btn btn-danger" onClick={eliminarCapitulo}>Eliminar</button>
+          </>
         ) : (
           <></>
-        )}
+        )}</div>
       </div>
-
       <div className="accordion-item">
         <h2 className="accordion-header" id={`flush-heading-a`}>
           <button
@@ -118,6 +134,7 @@ export const ChapterLayout = ({ capitulo }) => {
             </button>
           </div>
         </div>
+
       </div>
     </div>
   );

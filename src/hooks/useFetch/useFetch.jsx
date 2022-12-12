@@ -1,5 +1,7 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import {
+  useEffect,
+  useState,
+} from 'react';
 
 export const useFetch = (url="",method,body={}) => {
     const [content, setContent] = useState({
@@ -50,6 +52,7 @@ export const useFetch = (url="",method,body={}) => {
 
         setContent({ data: res, isLoading: false, hasError: false });
       }
+
 
       return { content,fetchData };
 }
