@@ -1,7 +1,9 @@
-import { useParams } from "react-router-dom";
-import { useFetch } from "../../../hooks";
-import { Loading } from "../../../UI";
-import { MaterialCard } from "../../components";
+import { useParams } from 'react-router-dom';
+
+import { useFetch } from '../../../hooks';
+import { Loading } from '../../../UI';
+import { MaterialCard } from '../../components';
+
 export const MaterialPage = () => {
   const { id_capitulo } = useParams();
   const url = `http://142.93.203.113:3001/api/chapters/${id_capitulo}/material`;

@@ -14,6 +14,7 @@ import {
   ClassPage,
   CodeEditorPage,
   CreateContentPage,
+  ForoPage,
   JoinClassPage,
   MaterialPage,
   PracticePage,
@@ -52,6 +53,8 @@ export const AuthenticatedRoutes = () => {
             <Route path="/contribuir/MisAportes" element={existLogedUser()?<MisAportes/>:<Navigate to="/"/>}/>
             <Route path="/contribuir/AportesRecientes" element={existLogedUser()?<AportesRecientes/>:<Navigate to="/"/>}/>
             <Route path="/contribuir/SubirAporte" element={existLogedUser()?<SubirAporte/>:<Navigate to="/"/>}/>
+            <Route path="/:id/foro" element={existLogedUser()?<ForoPage/>:<Navigate to="/"/>}/>
+
           </Routes>
         </div>
       </div>

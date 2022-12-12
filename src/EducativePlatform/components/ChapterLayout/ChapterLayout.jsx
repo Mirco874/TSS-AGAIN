@@ -1,5 +1,4 @@
-import PropTypes from "prop-types";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 export const ChapterLayout = ({ capitulo }) => {
   const navigate=useNavigate();
@@ -82,7 +81,7 @@ export const ChapterLayout = ({ capitulo }) => {
             <button
               className="text-light py-2 px-3  d-block my-3"
               style={{ backgroundColor: "#1D2939", borderRadius: "20px" }}
-              onClick={()=>{navigate(`foro/${id_capitulo}`)}}>
+              onClick={()=>{navigate(`foro`)}}>
               Revisar
             </button>
           </div>
