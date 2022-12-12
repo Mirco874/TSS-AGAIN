@@ -26,7 +26,7 @@ export const Mensajes = () => {
 
     const ar = data2.concat(data);
     let sorted = ar.sort((p1, p2) =>
-      p1.id > p2.id ? 1 : p1.id < p2.id ? -1 : 0
+      p1.id < p2.id ? -1 : p1.id > p2.id ? 1 : 0
     );
     setAportes(sorted);
   };
@@ -59,9 +59,9 @@ export const Mensajes = () => {
       {console.log(aportes)}
       {aportes.map((usuario) =>
         id_usuario == usuario.id_emisor ? (
-          <p className={styles.mensajeRecibido}>{usuario.contenido}</p>
-        ) : (
           <p className={styles.mensajeEnviado}>{usuario.contenido}</p>
+        ) : (
+          <p className={styles.mensajeRecibido}>{usuario.contenido}</p>
         )
       )}
       <form>
