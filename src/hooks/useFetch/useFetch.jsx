@@ -51,6 +51,9 @@ export const useFetch = (url="",method,body={}) => {
         setContent({ data: res, isLoading: false, hasError: false });
       }
 
+
+
+
       return { content,fetchData };
 }
 

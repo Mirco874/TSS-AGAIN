@@ -3,6 +3,7 @@ import { useState } from "react"
 export const useForm = (structure={}) => {
     const [form,setForm]=useState(structure);
 
+
     const onFormUpdate=({target})=>{
         const {name,value}=target;
         console.log(`name: ${name} value: ${value}`)
@@ -12,5 +13,5 @@ export const useForm = (structure={}) => {
         );       
     }
 
-  return{form,onFormUpdate}
+  return{form,onFormUpdate,setForm}
 }

@@ -1,11 +1,10 @@
-export const put=async(url,body)=>{
+export const del=async(url,body)=>{
     try {
         const rawResponse = await fetch(url, {
-          method: "PUT",
+          method: "DELETE",
           headers: {
                     "Accept": "application/json",
-                    "Content-Type": "application/json"},
-          body: JSON.stringify(body)
+                    "Content-Type": "application/json"}
         });
     
         const res = await rawResponse.json();
