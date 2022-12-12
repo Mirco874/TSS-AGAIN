@@ -15,6 +15,7 @@ import {
   ClassPage,
   CodeEditorPage,
   CreateContentPage,
+  ForoPage,
   JoinClassPage,
   MaterialPage,
   PracticePage,
@@ -29,6 +30,7 @@ import { CreateTaskPage } from '../../pages/CreateTaskPage/CreateTaskPage';
 import { Mensajes } from '../../pages/Mensajes/Mensajes';
 import { MisAportes } from '../../pages/MisAportes/MisAportes';
 import { MyResponsesPage } from '../../pages/MyResponsesPage/MyResponsesPage';
+import { PaginaPrincipal } from '../../pages/PaginaPrincipal/PaginaPrincipal';
 import { SubirAporte } from '../../pages/SubirAporte/SubirAporte';
 import { TaskResponses } from '../../pages/TaskResponses/TaskResponses';
 import { TasksPage } from '../../pages/TasksPage/TasksPage';
@@ -50,6 +52,7 @@ export const AuthenticatedRoutes = () => {
           <Routes>
 
             <Route path="" element={<ClassPage/>} />
+            <Route path="/PaginaPrincipal" element={existLogedUser()?<PaginaPrincipal/>:<Navigate to="/"/>}/>
             <Route path="/crear-clase" element={existLogedUser()?<RegisterClassPage/>:<Navigate to="/"/>}/>
             <Route path="/unirse-clase" element={existLogedUser()? <JoinClassPage/> :<Navigate to="/"/>}/>
             <Route path="/:id" element={ existLogedUser()?<ClassContent/>:<Navigate to="/"/>}/>
@@ -71,6 +74,8 @@ export const AuthenticatedRoutes = () => {
             <Route  path="/:id/capitulo/:id_capitulo/tareas/:id_tarea/revisar-entregas" element={existLogedUser()?<CheckTasksPage/>:<Navigate to="/"/>}/>
             <Route  path="/mis-entregas" element={existLogedUser()?<MyResponsesPage/>:<Navigate to="/"/>}/>
             <Route path="/:id/editar-capitulo/:id_capitulo" element={existLogedUser()?<UpdateContentPage/>:<Navigate to="/"/>}/>
+            <Route path="/:id/foro" element={existLogedUser()?<ForoPage/>:<Navigate to="/"/>}/>
+
           </Routes>
         </div>
       </div>

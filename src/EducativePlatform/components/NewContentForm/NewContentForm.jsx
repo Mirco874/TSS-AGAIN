@@ -39,9 +39,9 @@ export const NewContentForm = () => {
 
   return (
       <form className="mx-auto border border-dark rounded h-75 w-50 p-3 mt-3">
-      <h3>Crear capítulo</h3>
+      <h3>Crear Tema</h3>
         <div className="form-group">
-          <label htmlFor="exampleFormControlInput1">Titulo del capítulo</label>
+          <label htmlFor="exampleFormControlInput1">Titulo del tema</label>
           <input
             type="text"
             className="form-control"
@@ -161,6 +161,7 @@ export const NewContentForm = () => {
 
         <button className="btn btn-primary mb-3 me-5" onClick={onCreateContent}>
           Crear capítulo
+
         </button>
         <button  className="btn btn-danger mb-3" onClick={onReturn}>
           Regresar

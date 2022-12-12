@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 export const RegisterForm = () => {
   return (
@@ -43,7 +43,7 @@ export const RegisterForm = () => {
       </button>
       <br />
       <span>
-        ¿ya tienes una cuenta? <Link to="/inicio-sesion">Iniciar sesion</Link>.
+        ¿Ya tienes una cuenta? <Link to="/inicio-sesion">Iniciar sesion</Link>.
       </span>
     </form>
   );

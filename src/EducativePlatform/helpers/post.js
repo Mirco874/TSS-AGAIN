@@ -5,6 +5,7 @@ export const post=async(url,body)=>{
         const rawResponse = await         
         fetch(url,
         {
+
             headers: {
               'Accept': 'application/json',
               'Content-Type': 'application/json'
@@ -21,3 +22,4 @@ export const post=async(url,body)=>{
       }
 
 }
+

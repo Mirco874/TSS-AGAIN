@@ -1,5 +1,13 @@
-import { Link, useNavigate } from "react-router-dom";
-import {useForm, useLogin } from "../../../hooks";
+import {
+  Link,
+  useNavigate,
+} from 'react-router-dom';
+
+import {
+  useForm,
+  useLogin,
+} from '../../../hooks';
+import styles from './LoginForm.css';
 
 export const LoginForm = () => {
 
@@ -13,7 +21,14 @@ export const LoginForm = () => {
   };
 
   return (
-    <form className="border border-dark rounded h-75 w-50 p-3">
+<div>
+
+      <div class="img_container">
+    <div class="poster_2">
+      <img src="./assets/images/sally22.png" />
+    </div>
+  </div> <div class="form_container">
+    <form className={styles.form_container}>
       <div className="form-group">
         <label htmlFor="exampleInputEmail1">Email</label>
         <input
@@ -51,6 +66,6 @@ export const LoginForm = () => {
       <span>
         ¿No tienes una cuenta? <Link to="/registro">Crear cuenta</Link>.
       </span>
-    </form>
+    </form></div></div>
   );
 };

@@ -98,7 +98,7 @@ const editarCapitulo=(e)=>{
             <button
               className="text-light py-2 px-3  d-block my-3"
               style={{ backgroundColor: "#1D2939", borderRadius: "20px" }}
-              onClick={()=>{navigate(`foro/${id_capitulo}`)}}>
+              onClick={()=>{navigate(`foro`)}}>
               Revisar
             </button>
           </div>
