@@ -4,7 +4,6 @@ import { PaginaPrincipal } from '../PaginaPrincipal/PaginaPrincipal';
 
 export const LandingPage = () => {
   
-  get("http://142.93.203.113:3001/api/users/1/class");
 
   return (
     <main className="d-flex flex-column ">

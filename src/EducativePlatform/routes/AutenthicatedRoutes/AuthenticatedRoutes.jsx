@@ -21,6 +21,7 @@ import {
   PracticePage,
   RegisterClassPage,
 } from '../../pages';
+import { Aporte } from '../../pages/Aportes/Aporte';
 import {
   AportesRecientes,
 } from '../../pages/AportesRecientes/AportesRecientes';
