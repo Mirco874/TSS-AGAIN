@@ -14,8 +14,8 @@ export const RunCodeBtn = ({code,className,onOutputChange}) => {
 
 
       const response=await petition.json();
-
-      onOutputChange(response)
+      console.log(response)
+      onOutputChange(response.res)
     }
     
       return (

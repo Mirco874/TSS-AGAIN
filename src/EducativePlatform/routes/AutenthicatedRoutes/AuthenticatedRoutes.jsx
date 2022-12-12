@@ -32,6 +32,7 @@ import { Mensajes } from '../../pages/Mensajes/Mensajes';
 import { MisAportes } from '../../pages/MisAportes/MisAportes';
 import { MyResponsesPage } from '../../pages/MyResponsesPage/MyResponsesPage';
 import { PaginaPrincipal } from '../../pages/PaginaPrincipal/PaginaPrincipal';
+import { PDFPage } from '../../pages/PDFPage/PDFPage';
 import { SubirAporte } from '../../pages/SubirAporte/SubirAporte';
 import { TaskResponses } from '../../pages/TaskResponses/TaskResponses';
 import { TasksPage } from '../../pages/TasksPage/TasksPage';
@@ -52,7 +53,7 @@ export const AuthenticatedRoutes = () => {
         <div className="main-content col-10">
           <Routes>
 
-            <Route path="" element={<ClassPage/>} />
+            <Route path=""  element={existLogedUser()?<ClassPage/>:<Navigate to="/"/>} />            
             <Route path="/PaginaPrincipal" element={existLogedUser()?<PaginaPrincipal/>:<Navigate to="/"/>}/>
             <Route path="/crear-clase" element={existLogedUser()?<RegisterClassPage/>:<Navigate to="/"/>}/>
             <Route path="/unirse-clase" element={existLogedUser()? <JoinClassPage/> :<Navigate to="/"/>}/>
@@ -76,7 +77,7 @@ export const AuthenticatedRoutes = () => {
             <Route  path="/mis-entregas" element={existLogedUser()?<MyResponsesPage/>:<Navigate to="/"/>}/>
             <Route path="/:id/editar-capitulo/:id_capitulo" element={existLogedUser()?<UpdateContentPage/>:<Navigate to="/"/>}/>
             <Route path="/:id/foro" element={existLogedUser()?<ForoPage/>:<Navigate to="/"/>}/>
-
+            <Route path="/:id/material/:id_capitulo/view/:id_file" element={existLogedUser()?<PDFPage/>:<Navigate to="/"/>}/>
           </Routes>
         </div>
       </div>
