@@ -41,15 +41,8 @@ export const useFetch = (url="",method,body={}) => {
         }
 
         const res = await rawResponse.json();
-
-        if(method==="POST"){        
-        localStorage.setItem("id_usuario",res.data.id_usuario)
-        localStorage.setItem("nombre_completo",res.data.nombre_completo)
-        localStorage.setItem("id_rol",res.data.id_rol)
-        localStorage.setItem("email",res.data.email)
-        localStorage.setItem("token",res.token)}
-
-
+console.log(res);
+        
         setContent({ data: res, isLoading: false, hasError: false });
       }
 

@@ -32,6 +32,7 @@ const Navigate= useNavigate();
  
   }, 500);
   },[])
+  console.log(content);
 
 
   return (
@@ -39,7 +40,7 @@ const Navigate= useNavigate();
       {isLoading? <>Cargando clases...</>: 
       <>
 
-      <h3>Clases habillitadas:</h3>
+      <h3>Clases :</h3>
       <div className="mt-3 d-flex justify-content-around flex-wrap">
         {data.map((clase)=> {if(clase.archivado===0){
             return(<ClassCard key={clase.id_clase} title={clase.nombre_clase} id={clase.id_clase} archivado={false} reload={fetchData} />)
@@ -48,14 +49,14 @@ const Navigate= useNavigate();
       </div>
       <hr />
 
-      <h3>Clases archivadas:</h3>
+      
+{user_rol === "3" && <><h3>Clases archivadas:</h3>
       <div className="mt-3 d-flex justify-content-around flex-wrap">
       {data.map((clase)=> {if(clase.archivado===1){
         return(<ClassCard key={clase.id_clase} title={clase.nombre_clase} id={clase.id_clase}  archivado={true} reload={fetchData}/>);
         }
       })}
-</div>
-
+</div></>}
 
       </> }
 

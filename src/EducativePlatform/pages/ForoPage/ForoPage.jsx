@@ -16,7 +16,7 @@ export const ForoPage = () => {
   const formularioSubir = {
     contenido: ""
   };
-  const { form, onFormUpdate } = useForm(formularioSubir);
+  const { form, onFormUpdate, setForm } = useForm(formularioSubir);
   
 
   const { id} = useParams();
@@ -32,8 +32,10 @@ export const ForoPage = () => {
     const id_usuario = localStorage.getItem("id_usuario");
     console.log(id_usuario);
     const nombre_completo = localStorage.getItem("nombre_completo")
+    setForm(formularioSubir)
     await post(`http://142.93.203.113:3001/api/chapter/${id}/forum`, {...form, autor: nombre_completo}); 
     await fetchData();
+
   };
 
   
@@ -74,6 +76,7 @@ export const ForoPage = () => {
             name="contenido"
             onChange={onFormUpdate}
             className={styles.box}
+            value={form.contenido}
           />
           <br />
           <br />           
