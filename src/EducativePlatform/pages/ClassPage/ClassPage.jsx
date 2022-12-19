@@ -1,7 +1,16 @@
-import { useState } from "react";
-import { useEffect } from "react";
-import { useFetch } from "../../../hooks/"
-import { ClassCard, CreateClassBtn, JoinClassBtn } from "../../components"
+import {
+  useEffect,
+  useState,
+} from 'react';
+
+import { useNavigate } from 'react-router-dom';
+
+import { useFetch } from '../../../hooks/';
+import {
+  ClassCard,
+  CreateClassBtn,
+  JoinClassBtn,
+} from '../../components';
 
 export const ClassPage = () => {
 
@@ -11,11 +20,12 @@ export const ClassPage = () => {
 
   const { content,fetchData}=useFetch(`http://142.93.203.113:3001/api/users/${user_id}/class`,"GET")
   const {data,isLoading}=content;
-
+const Navigate= useNavigate();
   useEffect(()=>{
     setTimeout(function() {
       setUserId(localStorage.getItem("id_usuario"));
       setUserRol(localStorage.getItem("id_rol"));
+      if(localStorage.getItem('active')==='false'){Navigate('/inicio-sesion')}
       if(localStorage.getItem("id_usuario")===null){
         window.location.reload() 
       }

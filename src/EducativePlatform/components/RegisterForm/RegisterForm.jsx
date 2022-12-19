@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+
 import { useForm } from '../../../hooks';
 import { post } from '../../helpers';
 
@@ -8,7 +9,7 @@ export const RegisterForm = () => {
 
 
   const registerUser=async()=>{
-    await post("http://142.93.203.113:3001/api/users",form);
+    await post("http://142.93.203.113:3001/api/register",form);
   }
 
   return (

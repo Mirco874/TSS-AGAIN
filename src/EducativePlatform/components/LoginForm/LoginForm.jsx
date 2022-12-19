@@ -17,7 +17,11 @@ export const LoginForm = () => {
 
   const login = () => {
      fetchData()
-     navigate("/clases")
+
+     setTimeout(function() {
+      navigate("/clases")
+
+  }, 1000);
   };
 
   return (
