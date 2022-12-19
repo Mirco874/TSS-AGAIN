@@ -117,8 +117,8 @@ export const NewContentForm = () => {
                   name="estado_foro" 
                   onChange={onFormUpdate} >
             <option disabled selected >Seleccione un estado</option>    
-            <option value="0" >Activo</option>
-            <option value="1" >Inactivo</option>
+            <option value="1" >Activo</option>
+            <option value="0" >Inactivo</option>
           </select>
         </div>
 
