@@ -55,7 +55,7 @@ export const NewContentForm = () => {
           <input 
               type="text" 
               className="form-control" 
-              placeholder="URL"
+              placeholder="titulo del material"
               name="titulo_material"
               onChange={onFormUpdate} />
         </div>

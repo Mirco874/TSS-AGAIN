@@ -28,11 +28,13 @@ import {
 import { ChatPage } from '../../pages/ChatPage/ChatPage';
 import { ContribuirPage } from '../../pages/Contribuir/ContribuirPage';
 import { CreateTaskPage } from '../../pages/CreateTaskPage/CreateTaskPage';
+import { GradesPage } from '../../pages/GradesPage/GradesPage';
 import { Mensajes } from '../../pages/Mensajes/Mensajes';
 import { MisAportes } from '../../pages/MisAportes/MisAportes';
 import { MyResponsesPage } from '../../pages/MyResponsesPage/MyResponsesPage';
 import { PaginaPrincipal } from '../../pages/PaginaPrincipal/PaginaPrincipal';
 import { PDFPage } from '../../pages/PDFPage/PDFPage';
+import { RegisteredStudentsPage } from '../../pages/RegisteredStudentsPage/RegisteredStudentsPage';
 import { SubirAporte } from '../../pages/SubirAporte/SubirAporte';
 import { TaskResponses } from '../../pages/TaskResponses/TaskResponses';
 import { TasksPage } from '../../pages/TasksPage/TasksPage';
@@ -53,7 +55,9 @@ export const AuthenticatedRoutes = () => {
         <div className="main-content col-10">
           <Routes>
 
-            <Route path=""  element={existLogedUser()?<ClassPage/>:<Navigate to="/"/>} />            
+          <Route path=""  element={<ClassPage/>} />
+          <Route path="/:id/ver-estudiantes" element={existLogedUser()?<RegisteredStudentsPage/>:<Navigate to="/"/>}/>
+          <Route path="/:id/ver-notas" element={existLogedUser()?<GradesPage/>:<Navigate to="/"/>}/> 
             <Route path="/PaginaPrincipal" element={existLogedUser()?<PaginaPrincipal/>:<Navigate to="/"/>}/>
             <Route path="/crear-clase" element={existLogedUser()?<RegisterClassPage/>:<Navigate to="/"/>}/>
             <Route path="/unirse-clase" element={existLogedUser()? <JoinClassPage/> :<Navigate to="/"/>}/>

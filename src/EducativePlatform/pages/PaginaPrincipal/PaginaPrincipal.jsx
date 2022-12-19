@@ -17,6 +17,9 @@ export const PaginaPrincipal = () => {
         <div className={styles.Cuadro}>
           <img src={plataformaEducativa} alt="" className={styles.fotoCuadro} />
           <p>Amplia tus conocimientos en Simulacion de Sistemas</p>
+          <Link to={`/inicio-sesion`}>
+            <p>iniciar sesion.</p>
+          </Link>
           <Link to={`/registro`}>
             <p>Registrate</p>
           </Link>
